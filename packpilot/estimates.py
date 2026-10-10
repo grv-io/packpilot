@@ -18,7 +18,9 @@ H = {"still air": 8.0, "forced air": 30.0, "cold plate": 150.0}  # W/(m^2 K), ty
 CELLS = {
     # name: (Ah, V_nom, mass_kg, R_dc_ohm, diameter_m, length_m, usd_per_kwh_cell, cycle_life)
     "Samsung INR21700-50E": (4.9, 3.6, 0.069, 0.030, 0.021, 0.070, 128, 500),
-    "LFP 32140 15 Ah":      (15.0, 3.2, 0.300, 0.006, 0.032, 0.140, 81, 3500),
+    # Keeppower IFR32700: 6.0 Ah, 3.2 V, ~141 g, <=10 mOhm (method not stated), 3C discharge,
+    # 2000 cycles to 80 % (maker claim, condition not stated) -- research PDF 06, source [9]
+    "Keeppower IFR32700 LFP 6 Ah": (6.0, 3.2, 0.141, 0.010, 0.0324, 0.0705, 81, 2000),
 }
 
 
@@ -52,7 +54,7 @@ def module(cell, ns, npar, cooling, extra_mass=0.0, extra_cost_x=0.0):
 DESIGNS = [
     ("A base: 13S10P NMC, still air", "Samsung INR21700-50E", 13, 10, "still air", 0.0, 0.0),
     ("B 13S10P NMC, forced air", "Samsung INR21700-50E", 13, 10, "forced air", 0.6, 0.04),
-    ("C 16S3P LFP, cold plate", "LFP 32140 15 Ah", 16, 3, "cold plate", 0.8, 0.12),
+    ("C 16S8P LFP, cold plate", "Keeppower IFR32700 LFP 6 Ah", 16, 8, "cold plate", 0.8, 0.12),
 ]
 
 if __name__ == "__main__":

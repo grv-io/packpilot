@@ -24,7 +24,7 @@ st.set_page_config(page_title="PackPilot v0", layout="wide", initial_sidebar_sta
 # datasheet-class limits used by the rule engine (research PDF 06 / 09); verify before Round 2
 LIMITS = {
     "Samsung INR21700-50E": {"i_cont_a": 9.8, "v_max": 4.2, "t_max_c": 60, "n_cells_note": "21700 NMC"},
-    "LFP 32140 15 Ah":      {"i_cont_a": 30.0, "v_max": 3.65, "t_max_c": 60, "n_cells_note": "32140 LFP"},
+    "Keeppower IFR32700 LFP 6 Ah": {"i_cont_a": 18.0, "v_max": 3.65, "t_max_c": 60, "n_cells_note": "32700 LFP"},
 }
 V_HV_LINE = 60.0        # AIS-156 counts > 60 V DC as high voltage
 T_DERATE = 60.0         # AIS-156 Amd 3: alarm and gradual power cut at 60 C

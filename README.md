@@ -8,9 +8,9 @@ PackPilot lets a student or pack engineer pick real cells from a datasheet libra
 
 ## What v0 does today
 
-- **Design under test**: cell (Samsung INR21700-50E NMC or a 32140 LFP cell), series count, parallel count, cooling (still air / forced air / cold plate), number of temperature sensors, ambient temperature, ride duration at 1C.
+- **Design under test**: cell (Samsung INR21700-50E NMC or Keeppower IFR32700 LFP), series count, parallel count, cooling (still air / forced air / cold plate), number of temperature sensors, ambient temperature, ride duration at 1C.
 - **Rule checks** (a failure blocks the recommendation): pack maximum voltage under the 60 V DC high-voltage line (AIS-156); per-cell current at 4.4 kW peak against the datasheet continuous limit; estimated peak temperature under the 60 °C derate threshold (AIS-156 Amendment 3); minimum four temperature sensors (AIS-156 Amendment 3).
-- **Baseline vs two options**: A = 13S10P NMC in still air, B = same with forced air, C = 16S3P LFP on a cold plate. Peak temperature, energy, mass, relative cell cost, cycle life, heat at 1C.
+- **Baseline vs two options**: A = 13S10P NMC in still air, B = same with forced air, C = 16S8P LFP on a cold plate. Peak temperature, energy, mass, relative cell cost, cycle life, heat at 1C.
 - **Traceability**: the inputs behind the numbers, with their source.
 
 With the default inputs the baseline fails the 60 °C rule and the forced-air option passes.
